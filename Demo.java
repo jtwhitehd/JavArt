@@ -62,6 +62,7 @@ public class Demo {
 
         new Thread(() -> {
         	final int SH_SIZE = 50;
+        	final int MOVE = 7;
         	
         	int[] val = new int[2];
         	val[0] = 0;		// x coordinate
@@ -89,16 +90,16 @@ public class Demo {
                 });
      
                 if (towardsRight) {
-                	val[0] = val[0] + 5;
+                	val[0] = val[0] + MOVE;
                 }
                 else {
-                	val[0] = val[0] - 5;
+                	val[0] = val[0] - MOVE;
                 }
                 if (towardsBottom) {
-                	val[1] = val[1] + 5;
+                	val[1] = val[1] + MOVE;
                 }
                 else {
-                	val[1] = val[1] - 5;
+                	val[1] = val[1] - MOVE;
                 }
                 
                 if (val[0] + SH_SIZE >= 800) {	// left-right bounds check
@@ -119,4 +120,3 @@ public class Demo {
         }).start();
     }
 }
-
